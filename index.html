@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf8">
+        <title>Chocolator</title>
+        <meta name="description" content="Crusaders Quest Bread Calculator. Because Chocolat is &hearts; and bread is serious business.">
+        <meta name="keywords" content="crusaders quest, chocolator, bread, training, calculator, simulator">
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+        /*
+                                         sys++/-+++                             
+                               .---:- `--++/---.---`  `-.````                   
+                             --:::://----.``       .----.``````                 
+                          ...//-.----/:            .::-     `.````              
+                          :++---------.                       `--.              
+                          :++---------.                       `--.              
+                          :++---------.                       .++-              
+                          +ss-----.---.                     `-/ss/              
+                            `ss:-----+/--`     `...`...-----/s/                 
+                               +sys+++/--.......      `-:+os/                   
+                                 ss+/----             `-:+-                     
+                                 ys+/----             `-:+-                     
+                                 ys+/---.             `-:+-                     
+                               :/ysoo::::.``.......``..//+/:.                   
+                   ://-------//syoo//::::.````````````.:::+s+/-                 
+               :+++///....oyyyyysso++++++::::::::::::::///+oss/                 
+               +yyy:--   `shhyyyssyyyssss++++++++++++++++++oos/                 
+             :ssssssoo---yhhhyyyyysssoooooooooooooo/::/ooooooooyy/              
+             /yyssssss:::yhhhyyyyssssooooooo+oo++++:--:++ooooooss+...           
+           --+ssssssssyyyhyyyssyyyyssoooooo+++//---....-:+ooooooosyyo           
+           syyssssssssyyyyyyysyyyyyysoooo+++::-.........../ssoooosyyo           
+           syyssssssssyyyyyyyyyyyyyyyssss+++++/-........-:/+ossoosyyo           
+           oossssssssshhhhyyyyyyyyysyys/:///:::-........-:::+ssssyyyo           
+             /sssssssshhhhhyyyyyyyyssys::yhhhhy/......../hs+osyyyhhhs           
+             /yyyyyyyyhhhoyhhyy/:yyssys++::/yys-......../y+:+yyyyo...           
+             /yyyyyyyyhhh.shhyy/:yyssso::``-ss+........./s+:+yyyy+              
+             +hhyyyyyyyyyy:.-hhso//ssso:::::---.........-//:+hhyy+              
+             ``oyyyyyyyyyh-  ````ssyyso::......-sss+++/...:/ohhhhhyyo           
+               ohyyyyyyyyh-      .-yyss////:----/////////osyyhhhhhhhs           
+               :/yyyyyyyyh.       `//yo----:+++////:...-:://ohy//ohhs           
+                 shyyyyyyyyhy        ``  ossooo+```o++:      `    ```           
+                 /oyyyyyyyhhy         `..+++////---+oo/                         
+                   shhyyyyhhy        ::::---:::/sss+oo/                         
+                   shhyyyyo++    :---o+--///++//+++/oo+-.                       
+               -/` shhyyyh.      yyoo//::/++++/.....::/s:                       
+               :+//yhhhhh+`      ys++/:--//+oo/    ```-o:                       
+                 shhhhhhh.       ss::....oooyy+`      .o:                       
+                   shhhhh.        `yyooooyyyysss++++++:                         
+               ohhhhhh`                  -----.    ---.                         
+                ``````                   /++++:    +++:                         
+            
+        */
+        </style>
+        <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="favicons/browserconfig.xml">
+        <meta name="theme-color" content="#524131">
+        <meta property="og:image" content="http://pururu.moe/vy/chocolator/ogimage1.png">
+        <meta property="og:site_name" content="Chocolator">
+        <meta property="og:title" content="Chocolator">
+        <meta property="og:url" content="http://pururu.moe/vy/chocolator/">
+        <meta property="og:description" content="Crusaders Quest Bread Calculator. Because Chocolat is &hearts; and bread is serious business.">
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-10467975-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <h1>Chocolator<span class="description">Crusaders Quest Bread Calculator</span></h1>
+                <h2>because Chocolat is &hearts;</h2>
+                <div class="chocola-warning">Hit the EXP bar to switch modes</div>
+            </div>
+            <div class="content data">
+                <div class="hero statistic cf">
+                    <div class="rank section chocolatier">
+                        <div class="title">
+                            <a href="javascript:;" class="tick min">-</a>
+                            <h2>Hero Rank</h2>
+                            <a href="javascript:;" class="tick plus">+</a>
+                        </div>
+                        <div class="input cf">
+
+                        </div>
+                    </div>
+                    <div class="grade section chocolatier">
+                        <div class="title"><h2>Hero Grade</h2></div>
+                        <div class="input">
+                            <a href="javascript:;" id="grade0" data-grade="0" class="current-grade text-stroke active">
+                                +0
+                            </a>
+                            <a href="javascript:;" id="grade1" data-grade="1" class="current-grade text-stroke">
+                                +1
+                            </a>
+                            <a href="javascript:;" id="grade2" data-grade="2" class="current-grade text-stroke">
+                                +2
+                            </a>
+                            <a href="javascript:;" id="grade3" data-grade="3" class="current-grade text-stroke">
+                                +3
+                            </a>
+                            <a href="javascript:;" id="grade4" data-grade="4" class="current-grade text-stroke">
+                                +4
+                            </a>
+                        </div>
+                    </div>
+                    <div class="exp section chocolatier">
+                        <div class="title"><h2>Current Hero EXP</h2></div>
+                        <div class="input">
+                            <input type="text" class="current-exp chocolatier-input-text" value="0">
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" data-type="next" class="exp-bar">
+                    <div class="bar empty"></div>
+                    <div class="bar base-exp shadow" style="width: 0%;"></div>
+                    <div class="bar bread-exp shadow" style="width: 0%"></div>
+                    <div class="bar bonus-exp shadow" style="width: 0%"></div>
+                    <div class="rulers" style="opacity: 0;">
+                        <div id="ruler1" class="ruler" style="left: 3.5%;">
+                            <div class="pointer"></div>
+                            <div class="value">100</div>
+                        </div>
+                        <div id="ruler2" class="ruler" style="left: 27.5%;">
+                            <div class="pointer"></div>
+                            <div class="value">800</div>
+                        </div>
+                        <div id="ruler3" class="ruler" style="left: 100%;">
+                            <div class="pointer"></div>
+                            <div class="value">2900</div>
+                        </div>
+                        <div id="ruler4" class="ruler" style="left: 100%;">
+                            <div class="pointer"></div>
+                            <div class="value">7900</div>
+                        </div>
+                        <div id="ruler5" class="ruler" style="left: 100%;">
+                            <div class="pointer"></div>
+                            <div class="value">18500</div>
+                        </div>
+                    </div>
+                    <div class="bar number center text-stroke">
+                        <span class="current-exp-value">0</span>/<span class="max-exp-value">0</span>
+                    </div>
+                    <div class="bar number left text-stroke">
+                        <span class="current-grade-value">+0</span>
+                    </div>
+                    <div class="bar number right text-stroke">
+                        <span class="next-grade-value">+1</span>
+                    </div>
+                </a>
+                <div id="bread-basket" class="bread chocolatier">
+                    <div class="section">
+                        <div class="title">Bread Basket</div>
+                        <div class="basket">
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="bread-wrapper"><div class="looks"></div></div>
+                            <div class="chocola-warning text-stroke">Please select bread from tray</div>
+                        </div>
+                        <div id="cost" class="title text-stroke"><span class="coin"></span> 0</div>
+                    </div>
+                </div>
+                <div id="bread-tray" class="bread chocolatier">
+                    <div class="section">
+                        <div class="title">Tray</div>
+                        <div class="filter cf">
+                            <a href="javascript:;" class="rank chocolatier light active" data-filter="0"><div class="star"></div></a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="6">6</a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="5">5</a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="4">4</a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="3">3</a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="2">2</a>
+                            <a href="javascript:;" class="rank chocolatier light" data-filter="1">1</a>
+                        </div>
+                        <div class="tray cf">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Starting from 0? Check <a href="http://appinvasion.com/threads/efficient-promotions-with-bread-and-gold-costs.286646/" target="_blank">here</a> for efficient bread usage.</p>
+                <p>Chocolator is not affiliated with, endorsed, sponsored, or specifically approved by NHN Entertainment USA, or their Affiliates. Chocolator may use the trademarks and other intellectual property of Crusaders Quest, which is permitted under Crusaders Quest Fansite Policy.</p>
+                <p>Chocolator 0.7.1611 - CQ IGN: <a href="https://twitter.com/Cleiryv" target="_blank">Vyriel</a> &amp; fionare</p>
+                <p>Gold table by /u/jarch3r</p>
+
+            </div> 
+        </div>
+
+        <script type="text/jsrender" id="basketTemplate">
+            <div class="bread-wrapper">
+                <div class="looks">
+                    <a href="javascript:;" class="remove" data-image="{{:image}}" data-title="{{:title}}" data-rank="{{:rank}}" data-exp="{{:exp}}" data-great="{{:great}}"><img src="images/{{:image}}" alt=""></a>
+            </div>
+            </div>
+        </script>
+
+        <script type="text/jsrender" id="basketTemplateEmpty">
+            <div class="bread-wrapper">
+                <div class="looks">
+            </div>
+            </div>
+        </script>
+
+        <script type="text/jsrender" id="breadTemplate">
+         <a href="javascript:;" class="bread-wrapper chocolatier light cf" data-image="{{:image}}" data-title="{{:title}}" data-rank="{{:rank}}" data-exp="{{:exp}}" data-great="{{:great}}">
+            <div class="looks">
+                <img src="images/{{:image}}" alt="">
+                <div class="star text-stroke">{{:rank}}</div>
+            </div>
+            <div class="detail">
+                <div class="name">{{:title}}</div>
+                <div class="taste">
+                    <span class="value">{{:exp}}</span>
+                    <span class="great">{{:great}}%</span>
+            </div>
+            </div>
+            </a>
+        </script>
+        <script type="text/javascript">
+            var vanilla = {};
+            vanilla.currentRank = 2, vanilla.currentGrade = 0, vanilla.currentExp = 0, vanilla.expToNext = 0, vanilla.expToMax = 0, vanilla.totalExpToNext = 0, vanilla.totalExpToMax = 0, vanilla.breadExp = 0, vanilla.breadChance = 0, vanilla.trainingCost = 0, vanilla.breadExpBonus = 0, vanilla.projectedExpToNext = 0, vanilla.projectedExpToMax = 0, vanilla.textToNext = "+1", vanilla.breads = [];
+            var azuki = {},
+                cinnamon = {};
+            cinnamon.ranks = [2, 3, 4, 5, 6],
+                cinnamon.grades = [0, 1, 2, 3, 4],
+                cinnamon.costs = [
+                [],
+                [0, 0, 350, 500, 690, 780, 810],
+                [0, 0, 590, 730, 980, 1110, 1160],
+                [0, 0, 600, 1220, 1630, 1850, 1930],
+                [0, 0, 600, 1300, 1900, 2640, 2770],
+                [0, 0, 600, 1300, 1900, 3200, 3720],
+                [0, 0, 600, 1300, 1900, 3200, 4900]
+            ],
+                cinnamon.expToNext = [100, 700, 2100, 5000, 10600],
+                cinnamon.breads = [{
+                    title: "Macaroon",
+                    rank: 6,
+                    exp: 600,
+                    great: 0,
+                    image: "36.png"
+                }, {
+                    title: "Hamburger",
+                    rank: 6,
+                    exp: 480,
+                    great: 20,
+                    image: "16.png"
+                }, {
+                    title: "Special Donut",
+                    rank: 6,
+                    exp: 360,
+                    great: 40,
+                    image: "26.png"
+                }, {
+                    title: "Strawberry Pie",
+                    rank: 5,
+                    exp: 330,
+                    great: 0,
+                    image: "35.png"
+                }, {
+                    title: "Pizza",
+                    rank: 5,
+                    exp: 264,
+                    great: 20,
+                    image: "15.png"
+                }, {
+                    title: "Strawberry Donut",
+                    rank: 5,
+                    exp: 198,
+                    great: 40,
+                    image: "25.png"
+                }, {
+                    title: "Cream Bread",
+                    rank: 4,
+                    exp: 180,
+                    great: 0,
+                    image: "34.png"
+                }, {
+                    title: "Sandwich",
+                    rank: 4,
+                    exp: 144,
+                    great: 20,
+                    image: "14.png"
+                }, {
+                    title: "Rice Donut",
+                    rank: 4,
+                    exp: 108,
+                    great: 40,
+                    image: "24.png"
+                }, {
+                    title: "Halloween Cake",
+                    rank: 4,
+                    exp: 150,
+                    great: 25,
+                    image: "46.png"
+                }, {
+                    title: "Shamrock Cup Cake",
+                    rank: 4,
+                    exp: 200,
+                    great: 30,
+                    image: "45.png"
+                }, {
+                    title: "Chocolate",
+                    rank: 4,
+                    exp: 280,
+                    great: 0,
+                    image: "42.png"
+                }, {
+                    title: "Choco Cup Cake",
+                    rank: 4,
+                    exp: 240,
+                    great: 15,
+                    image: "43.png"
+                }, {
+                    title: "Big Chocec Cake",
+                    rank: 4,
+                    exp: 140,
+                    great: 50,
+                    image: "44.png"
+                }, {
+                    title: "Christmas Cake",
+                    rank: 4,
+                    exp: 150,
+                    great: 25,
+                    image: "41.png"
+                }, {
+                    title: "Croissant",
+                    rank: 3,
+                    exp: 100,
+                    great: 0,
+                    image: "33.png"
+                }, {
+                    title: "Snack Wrap",
+                    rank: 3,
+                    exp: 80,
+                    great: 20,
+                    image: "13.png"
+                }, {
+                    title: "Jelly",
+                    rank: 3,
+                    exp: 60,
+                    great: 40,
+                    image: "23.png"
+                }, {
+                    title: "Bread",
+                    rank: 2,
+                    exp: 50,
+                    great: 0,
+                    image: "32.png"
+                }, {
+                    title: "Hot Dog",
+                    rank: 2,
+                    exp: 40,
+                    great: 20,
+                    image: "12.png"
+                }, {
+                    title: "Choco Donut",
+                    rank: 2,
+                    exp: 30,
+                    great: 40,
+                    image: "22.png"
+                }, {
+                    title: "Morning Bread",
+                    rank: 1,
+                    exp: 30,
+                    great: 0,
+                    image: "31.png"
+                }, {
+                    title: "Sausage Bread",
+                    rank: 1,
+                    exp: 24,
+                    great: 20,
+                    image: "11.png"
+                }, {
+                    title: "Donut",
+                    rank: 1,
+                    exp: 18,
+                    great: 40,
+                    image: "21.png"
+                }];
+            var coconut = {};
+            coconut.init = function() {
+                $("#bread-tray .tray").html($("#breadTemplate").render(cinnamon.breads)), $(".hero .exp input").keyup(function() {
+                    coconut.refreshStatus()
+                }), $(".hero .rank .tick.min").click(function() {
+                    vanilla.currentRank > 2 && (vanilla.currentRank--, vanilla.currentGrade = 0), coconut.refreshStatus()
+                }), $(".hero .rank .tick.plus").click(function() {
+                    vanilla.currentRank < 6 && (vanilla.currentRank++, vanilla.currentGrade = 0), coconut.refreshStatus()
+                }), $(".hero .grade a").click(function() {
+                    vanilla.currentGrade = parseInt($(this).data("grade")), coconut.refreshStatus()
+                }), $(".exp-bar").click(function() {
+                    "next" === $(".exp-bar").data("type") ? $(".exp-bar").data("type", "max") : $(".exp-bar").data("type", "next"), coconut.refreshStatus()
+                }), $("#bread-tray .tray").on("click", "a", function() {
+                    vanilla.breads.length < 6 && vanilla.breads.push($(this).data()), coconut.updateBasket(), coconut.refreshStatus()
+                }), $("#bread-basket .basket").on("click", "a", function() {
+                    $(this).remove(), vanilla.breads = [], $("#bread-basket .basket a").each(function() {
+                        vanilla.breads.push($(this).data())
+                    }), coconut.updateBasket(), coconut.refreshStatus()
+                }), coconut.refreshStatus()
+            }, coconut.updateRank = function() {
+                $(".hero .rank .input").html("");
+                for (var a = 0; a < vanilla.currentRank; a++) $(".hero .rank .input").append('<div class="star"></div>');
+                switch ($(".hero .grade .input a").hide().removeClass("active"), $(".rulers .ruler").removeClass("last"), vanilla.currentRank > 1 && $("#grade0").show(), vanilla.currentRank > 2 && $("#grade1").show(), vanilla.currentRank > 3 && $("#grade2").show(), vanilla.currentRank > 4 && $("#grade3").show(), vanilla.currentRank > 5 && $("#grade4").show(), vanilla.currentRank) {
+                    case 2:
+                        $("#ruler1").css("left", Math.floor(100) + "%").addClass("last");
+                        break;
+                    case 3:
+                        $("#ruler1").css("left", Math.floor(12.5) + "%"), $("#ruler2").css("left", Math.floor(100) + "%").addClass("last");
+                        break;
+                    case 4:
+                        $("#ruler1").css("left", Math.floor(100 / 2900 * 100) + "%"), $("#ruler2").css("left", Math.floor(800 / 2900 * 100) + "%"), $("#ruler3").css("left", Math.floor(100) + "%").addClass("last");
+                        break;
+                    case 5:
+                        $("#ruler1").css("left", Math.floor(100 / 7900 * 100) + "%"), $("#ruler2").css("left", Math.floor(800 / 7900 * 100) + "%"), $("#ruler3").css("left", Math.floor(2900 / 7900 * 100) + "%"), $("#ruler4").css("left", Math.floor(100) + "%").addClass("last");
+                        break;
+                    case 6:
+                        $("#ruler1").css("left", Math.floor(100 / 18500 * 100) + "%"), $("#ruler2").css("left", Math.floor(800 / 18500 * 100) + "%"), $("#ruler3").css("left", Math.floor(2900 / 18500 * 100) + "%"), $("#ruler4").css("left", Math.floor(7900 / 18500 * 100) + "%"), $("#ruler5").css("left", Math.floor(100) + "%").addClass("last")
+                }
+            }, coconut.updateGrade = function() {
+                $("#grade" + vanilla.currentGrade).addClass("active")
+            }, coconut.updateBarToNext = function() {
+                $(".exp-bar .rulers").css("opacity", 0), $(".exp-bar .number.left span").html("+" + vanilla.currentGrade), $(".exp-bar .number.right span").html(vanilla.textToNext), $(".exp-bar .number.center .current-exp-value").html(vanilla.breadChance > 99 || 0 === vanilla.breadChance ? vanilla.projectedExpToNext : vanilla.currentExp + vanilla.breadExp + " (" + vanilla.projectedExpToNext + " " + vanilla.breadChance + "%)"), $(".exp-bar .number.center .max-exp-value").html(vanilla.totalExpToNext);
+                var a = Math.floor(vanilla.currentExp / vanilla.totalExpToNext * 100),
+                    e = Math.floor((vanilla.currentExp + vanilla.breadExp) / vanilla.totalExpToNext * 100),
+                    r = Math.floor(vanilla.projectedExpToNext / vanilla.totalExpToNext * 100),
+                    l = vanilla.breadChance;
+                switch (l > 100 && (l = 100), l /= 100, $(".exp-bar .base-exp").width(a + "%"), $(".exp-bar .bread-exp").width(e + "%"), $(".exp-bar .bonus-exp").width(r + "%").css("opacity", l), vanilla.currentGrade) {
+                    case 0:
+                        $("#ruler1").css("left", "200%"), $("#ruler2").css("left", "200%"), $("#ruler3").css("left", "200%"), $("#ruler4").css("left", "200%"), $("#ruler5").css("left", "200%");
+                        break;
+                    case 1:
+                        $("#ruler1").css("left", "-100%"), $("#ruler2").css("left", "200%"), $("#ruler3").css("left", "200%"), $("#ruler4").css("left", "200%"), $("#ruler5").css("left", "200%");
+                        break;
+                    case 2:
+                        $("#ruler1").css("left", "-100%"), $("#ruler2").css("left", "-100%"), $("#ruler3").css("left", "200%"), $("#ruler4").css("left", "200%"), $("#ruler5").css("left", "200%");
+                        break;
+                    case 3:
+                        $("#ruler1").css("left", "-100%"), $("#ruler2").css("left", "-100%"), $("#ruler3").css("left", "-100%"), $("#ruler4").css("left", "200%"), $("#ruler5").css("left", "200%");
+                        break;
+                    case 4:
+                        $("#ruler1").css("left", "-100%"), $("#ruler2").css("left", "-100%"), $("#ruler3").css("left", "-100%"), $("#ruler4").css("left", "-100%"), $("#ruler5").css("left", "200%")
+                }
+            }, coconut.updateBarToMax = function() {
+                $(".exp-bar .rulers").css("opacity", 1), $(".exp-bar .number.left span").html("+0"), $(".exp-bar .number.right span").html("+MAX"), $(".exp-bar .number.center .current-exp-value").html(vanilla.breadChance > 99 || 0 === vanilla.breadChance ? vanilla.projectedExpToMax : vanilla.pureProjectedExpToMax + vanilla.breadExp + " (" + vanilla.projectedExpToMax + " " + vanilla.breadChance + "%)"), $(".exp-bar .number.center .max-exp-value").html(vanilla.totalExpToMax);
+                var a = Math.floor(vanilla.pureProjectedExpToMax / vanilla.totalExpToMax * 100),
+                    e = Math.floor((vanilla.pureProjectedExpToMax + vanilla.breadExp) / vanilla.totalExpToMax * 100),
+                    r = Math.floor(vanilla.projectedExpToMax / vanilla.totalExpToMax * 100),
+                    l = vanilla.breadChance;
+                l > 100 && (l = 100), l /= 100, $(".exp-bar .base-exp").width(a + "%"), $(".exp-bar .bread-exp").width(e + "%"), $(".exp-bar .bonus-exp").width(r + "%").css("opacity", l)
+            }, coconut.updateBasket = function() {
+                $('#bread-basket .basket').html($('#basketTemplate').render(vanilla.breads));
+                vanilla.emptyBasket = [];
+                //var emptyBasketAmount =  (Math.ceil(vanilla.breads.length/6)*6) - vanilla.breads.length;
+                var emptyBasketAmount =  6 - vanilla.breads.length;
+                for($i = 0; $i < emptyBasketAmount; $i++) {
+                    vanilla.emptyBasket.push({});
+                }
+                $('#bread-basket .basket').append($('#basketTemplateEmpty').render(vanilla.emptyBasket));
+
+                if(vanilla.emptyBasket.length == 6) {
+                    $('#bread-basket .basket').append('<div class="chocola-warning text-stroke">Please select bread from tray</div>');
+                }
+            }, coconut.refreshStatus = function() {
+                if (vanilla.currentExp = parseInt($(".hero .exp input").val()), isNaN(vanilla.currentExp) && (vanilla.currentExp = 0), vanilla.currentGrade < vanilla.currentRank - 1) {
+                    vanilla.expToNext = cinnamon.expToNext[vanilla.currentGrade] - vanilla.currentExp, vanilla.totalExpToNext = cinnamon.expToNext[vanilla.currentGrade], vanilla.expToMax = 0, vanilla.projectedExpToMax = 0, vanilla.projectedExpToNext = 0, vanilla.pureProjectedExpToMax = vanilla.currentExp;
+                    for (var a = 0; a < vanilla.currentRank - 1; a++) vanilla.expToMax += cinnamon.expToNext[a];
+                    vanilla.totalExpToMax = vanilla.expToMax;
+                    for (var a = 0; a < vanilla.currentGrade; a++) vanilla.expToMax -= cinnamon.expToNext[a], vanilla.projectedExpToMax += cinnamon.expToNext[a], vanilla.pureProjectedExpToMax += cinnamon.expToNext[a];
+                    vanilla.currentExp > 0 && (vanilla.expToMax -= vanilla.currentExp), vanilla.textToNext = vanilla.currentGrade == vanilla.currentRank - 2 ? "+MAX" : "+" + (vanilla.currentGrade + 1), vanilla.breadExp = 0, vanilla.breadChance = 0, vanilla.trainingCost = 0, vanilla.breadExpBonus = 0, $("#bread-basket .basket a").each(function() {
+                        vanilla.breadExp += $(this).data("exp"), vanilla.breadChance += $(this).data("great"), vanilla.trainingCost += cinnamon.costs[$(this).data('rank')][vanilla.currentRank];
+                    }), vanilla.breadChance > 0 && (vanilla.breadExpBonus = Math.floor(.5 * vanilla.breadExp)), vanilla.expToNext -= vanilla.breadExpBonus + vanilla.breadExp, vanilla.expToMax -= vanilla.breadExpBonus + vanilla.breadExp, vanilla.projectedExpToNext += vanilla.currentExp + vanilla.breadExpBonus + vanilla.breadExp, vanilla.projectedExpToMax += vanilla.currentExp + vanilla.breadExpBonus + vanilla.breadExp
+                } else vanilla.textToNext = "+0", vanilla.expToNext = 0, vanilla.expToMax = 0, vanilla.projectedExpToNext = 0, vanilla.projectedExpToMax = 0;
+                coconut.updateRank(), coconut.updateGrade(), "next" === $(".exp-bar").data("type") ? coconut.updateBarToNext() : coconut.updateBarToMax(), $("#cost").html('<span class="coin"></span> ' + vanilla.trainingCost)
+            }, $(window).ready(function() {
+                coconut.init()
+            });
+
+            var activeRank = 0;
+            $("#bread-tray .filter .rank").on( "click", function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                activeRank = $(this).data("filter");
+                $("#bread-tray .tray .bread-wrapper").each( function() {
+                    console.log($(this).data("rank"));
+                    if( $(this).data("rank") == activeRank || activeRank == 0 ) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
